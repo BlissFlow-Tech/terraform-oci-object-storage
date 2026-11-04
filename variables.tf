@@ -11,7 +11,6 @@ variable "namespace" {
 variable "bucket" {
   description = "Bucket to create, with optional retention, lifecycle, replication and pre-authenticated request settings"
   type = object({
-    provider              = optional(string)
     compartment_id        = string
     name                  = optional(string)
     access_type           = optional(string, "NoPublicAccess")
