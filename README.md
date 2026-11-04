@@ -56,7 +56,7 @@ module "bucket" {
 * The module needs two OCI providers: `oci` for the bucket region and `oci.home`, aliased to the tenancy home region, for the IAM policy. Pass both even when you don't replicate.
 * Replication creates an IAM policy that lets the regional Object Storage service manage objects in the bucket's compartment, so `objectstorage_service_policy_name` is required whenever `replication_rules` is set.
 * `retention_rules[*].time_unit` must be uppercase `DAYS` or `YEARS`.
-* Pre-authenticated requests are named after their map key, and the `access_uri` in the output is a bearer URL that grants access by itself.
+* Pre-authenticated requests are named after their map key, and the `access_uri` in the output is a bearer URL that grants access by itself, so it is marked sensitive. A root output that exposes `bucket` needs `sensitive = true` once the bucket has pre-authenticated requests.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

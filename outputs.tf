@@ -30,7 +30,7 @@ output "bucket" {
       k => {
         id                    = v.id
         name                  = v.name
-        access_uri            = v.access_uri
+        access_uri            = sensitive(v.access_uri)
         time_expires          = v.time_expires
         access_type           = v.access_type
         bucket                = v.bucket
