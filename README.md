@@ -7,7 +7,7 @@ Terraform module that creates an OCI Object Storage bucket with optional retenti
 ```hcl
 module "bucket" {
   source  = "blissflow-tech/object-storage/oci"
-  version = "~> 1.0"
+  version = "~> 1.1"
 
   providers = {
     oci      = oci
