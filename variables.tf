@@ -45,7 +45,7 @@ variable "bucket" {
     })))
     preauthenticated_request = optional(map(object({
       access_type           = string
-      name                  = string
+      name                  = optional(string)
       time_expires          = string
       bucket_listing_action = optional(string)
       object_name           = optional(string)

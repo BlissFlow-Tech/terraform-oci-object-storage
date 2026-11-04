@@ -88,7 +88,7 @@ resource "oci_objectstorage_preauthrequest" "this" {
   provider              = oci
   access_type           = each.value.access_type
   bucket                = oci_objectstorage_bucket.this.name
-  name                  = each.key
+  name                  = coalesce(each.value.name, each.key)
   namespace             = local.namespace
   time_expires          = each.value.time_expires
   bucket_listing_action = each.value.bucket_listing_action
